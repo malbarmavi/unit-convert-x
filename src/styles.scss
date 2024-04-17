@@ -1,4 +1,97 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --bg-color: #f4f5fa;
+  --text-color: #6d7381;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  --mat-toolbar-standard-height: var(--mat-toolbar-mobile-height);
+  --mat-toolbar-title-text-size: 1.15rem;
+}
+html,
+body {
+  height: 100%;
+  background: var(--bg-color);
+  font-family: "Roboto", sans-serif;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.sidenav-container {
+  .sidenav {
+    width: 300px;
+  }
+}
+
+mat-nav-list.mdc-list {
+  padding-top: 0;
+}
+a.active {
+  span {
+    // font-weight: 500;
+    color: #3f51b5;
+  }
+
+  background: linear-gradient(90deg, rgb(225, 225, 225), rgb(244, 244, 244));
+
+  border-radius: 0 !important
+    ;
+}
+
+.my-1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mx-2 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.f-xl {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-left: 0.25rem;
+}
+
+mat-sidenav-content.mat-drawer-content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 32;
+}
+
+.logo {
+  margin-right: 0.25rem;
+}
+.p-color {
+  color: #3f51b5;
+  font-variation-settings: "FILL" 0, "wght" 700, "GRAD" 0, "opsz" 32;
+}
+
+.container {
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+.component-logo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  opacity: 0.25;
+  overflow: hidden;
+  user-select: none;
+  .material-symbols-outlined {
+    @extend .p-color;
+    font-size: 12rem;
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 48;
+    position: relative;
+    top: 1rem;
+    right: -0.7rem;
+  }
+}
