@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
+import { FlexModule } from '@angular/flex-layout';
+import { MaterialModule } from '../../core/modules/material.module';
 
 @Component({
-  selector: 'app-length',
+  selector: 'uc-length',
   standalone: true,
-  imports: [],
+  imports: [MaterialModule, FlexModule],
   templateUrl: './length.component.html',
-  styleUrl: './length.component.scss'
+  styleUrl: './length.component.scss',
 })
-export class LengthComponent {
-
-}
+export class LengthComponent {}

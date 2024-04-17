@@ -2,11 +2,8 @@
     <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
         [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
         <mat-toolbar>
-            <!-- <span class="material-symbols-outlined logo p-color">
-                change_circle
-            </span> -->
-            <span>Unit Convert</span>
-            <span class="f-xl">X</span>
+
+            <uc-logo></uc-logo>
         </mat-toolbar>
         <mat-nav-list (click)="drawer.mode === 'over' ?  drawer.toggle() : ''">
             <a mat-list-item routerLink="currency" routerLinkActive="active">
@@ -38,8 +35,7 @@
                     menu
                 </span>
             </button>
-            <span>Unit Convert</span>
-            <span class="f-xl">X</span>
+            <uc-logo></uc-logo>
             }
         </mat-toolbar>
 
@@ -49,15 +45,3 @@
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
-
-
-<!-- 
-<app-main>
-
-</app-main>
-
-<mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-<mat-slide-toggle></mat-slide-toggle>
-
-<button mat-raised-button color="primary">Primary</button>
-<button mat-raised-button color="accent">Accent</button> -->
