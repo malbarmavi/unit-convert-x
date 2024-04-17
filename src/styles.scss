@@ -80,6 +80,7 @@ mat-sidenav-content.mat-drawer-content {
 }
 
 .component-logo {
+  display: none;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -93,5 +94,11 @@ mat-sidenav-content.mat-drawer-content {
     position: relative;
     top: 1rem;
     right: -0.7rem;
+  }
+}
+
+@media screen and (min-height: 450px) {
+  .component-logo {
+    display: block;
   }
 }
