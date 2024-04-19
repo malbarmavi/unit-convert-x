@@ -1,0 +1,24 @@
+:root {
+  --bg-color: #eceff1;
+  --text-color: #6d7381;
+
+  --mat-toolbar-standard-height: var(--mat-toolbar-mobile-height);
+  --mat-toolbar-title-text-size: 1.15rem;
+  --mat-toolbar-container-background-color: #fff;
+  --mdc-list-list-item-one-line-container-height: 55px;
+  --radius: 8px;
+  --mdc-elevated-card-container-shape: var(--radius);
+  --mdc-outlined-card-container-shape: var(--radius);
+
+  --mdc-filled-text-field-container-shape: var(--radius);
+  --mdc-filled-text-field-container-shape: var(--radius);
+}
+
+.mdc-switch.mdc-switch--selected:enabled:focus:not(:active)
+  .mdc-switch__handle::after {
+  background: var(--mdc-switch-selected-focus-handle-color);
+}
+
+.mdc-switch .mdc-switch__handle::before {
+  background: #ca3b3b;
+}

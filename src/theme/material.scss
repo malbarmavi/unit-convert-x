@@ -20,3 +20,15 @@ $my-theme: mat.define-light-theme(
 
 @include mat.all-component-themes($my-theme);
 @include mat.typography-hierarchy($my-typography);
+
+mat-toolbar.mat-toolbar {
+  background: transparent;
+}
+
+mat-nav-list.mdc-list {
+  margin: 1rem;
+  .mat-mdc-list-item[mat-list-item] {
+    margin-top: 0.5rem;
+    border-radius: 0.8rem !important;
+  }
+}
