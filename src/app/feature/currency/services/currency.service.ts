@@ -16,7 +16,7 @@ export class CurrencyService {
     console.log(environment.currencyAPIUrl);
   }
   getList(): CurrencyList {
-    const keys: CurrencyCode[] = Object.keys(CurrencyTable) as any;
+    const keys: CurrencyCode[] = Object.keys(CurrencyTable) as CurrencyCode[];
     return keys.map((c: CurrencyCode) => ({
       value: c,
       label: CurrencyTable[c],
@@ -32,6 +32,7 @@ export class CurrencyService {
       params,
     });
   }
+
   rate(code: CurrencyCode, targetCode: CurrencyCode): Observable<number> {
     if (code === targetCode) {
       return of(1);

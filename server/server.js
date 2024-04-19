@@ -13,7 +13,10 @@ app
   .get("/live", (req, res) => {
     const { base } = req.query;
     const rate = db.live.find(({ id }) => id == base);
-
-    res.status(200).send({ ...rate });
+    if (rate) {
+      res.status(200).send({ ...rate });
+    } else {
+      res.status(404).send({ message: "not founded..." });
+    }
   })
   .listen(3000);

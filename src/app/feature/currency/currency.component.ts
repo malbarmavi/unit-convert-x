@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject } from '@angular/core';
+import { Component, DestroyRef, OnInit, inject } from '@angular/core';
 import { FlexModule } from '@angular/flex-layout';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CurrencyCode } from '@core/types/currency-code';
@@ -13,7 +13,7 @@ import { CurrencyService } from './services/currency.service';
   templateUrl: './currency.component.html',
   styleUrl: './currency.component.scss',
 })
-export class CurrencyComponent {
+export class CurrencyComponent implements OnInit {
   currencyService = inject(CurrencyService);
   fb = inject(FormBuilder);
 
