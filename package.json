@@ -1,12 +1,14 @@
 {
   "name": "unit-convert-x",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "server": "node server/server.js"
   },
   "private": true,
   "dependencies": {
@@ -29,6 +31,9 @@
     "@angular-devkit/build-angular": "^17.2.1",
     "@angular/cli": "^17.2.1",
     "@angular/compiler-cli": "^17.2.0",
+    "@tinyhttp/app": "^2.2.3",
+    "@tinyhttp/cors": "^2.0.0",
+    "@tinyhttp/logger": "^2.0.0",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
