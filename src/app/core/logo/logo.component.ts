@@ -6,8 +6,8 @@ import { FlexModule } from '@angular/flex-layout';
   standalone: true,
   imports: [FlexModule],
   template: ` <div fxLayout="row" fxLayoutAlign="start center">
-    <span>Unit Convert</span>
     <img class="o-8" src="./assets/logo.png" alt="logo" />
+    <span>Unit Convert</span>
   </div>`,
   styles: `img {width:36px}`,
 })

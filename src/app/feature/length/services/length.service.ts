@@ -12,6 +12,6 @@ export class LengthService {
 
   calculate(baseUnit: LengthKey, toUnit: LengthKey, value: number): number {
     const rate: number = LengthConversionTable[baseUnit][toUnit];
-    return +(value * rate).toFixed(3)!;
+    return +(value * rate).toFixed(3);
   }
 }

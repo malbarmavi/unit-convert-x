@@ -1,8 +1,8 @@
-<div fxLayout="row" fxLayoutGap="4px" class="w-100" fxLayoutGap="1rem" fxLayout.sm="column" fxLayout.xs="column">
+<div fxLayout="row" class="w-100" fxLayoutGap="1rem" fxLayout.sm="column" fxLayout.xs="column">
     <mat-card fxFlex="50">
         <mat-card-content fxLayout="column" fxLayoutGap="4px" [formGroup]="form">
-
             <mat-form-field>
+
                 <mat-label>Base Value</mat-label>
                 <input matInput placeholder="Base Value" formControlName="baseValue">
             </mat-form-field>
@@ -13,7 +13,6 @@
                     @for (unit of units; track unit) {
                     <mat-option [value]="unit">{{unit | titlecase}}</mat-option>
                     }
-
                 </mat-select>
             </mat-form-field>
 
@@ -30,8 +29,6 @@
                 <mat-label>Target Value</mat-label>
                 <input matInput type="number" placeholder="target unit value" formControlName="targetValue">
             </mat-form-field>
-
-
         </mat-card-content>
     </mat-card>
 
@@ -48,7 +45,7 @@
 
                     </span>
                     <span class="mat-headline-3">
-                        {{form.get('baseUnit')?.value}}
+                        {{form.get('baseUnit')?.value | titlecase}}
 
                     </span>
                 </div>
@@ -66,15 +63,13 @@
                         {{form.get('targetValue')?.value || 0}}
                     </span>
                     <span class="mat-headline-3">
-                        {{form.get('targetUnit')?.value}}
+                        {{form.get('targetUnit')?.value | titlecase}}
                     </span>
                 </div>
             </div>
         </mat-card-content>
     </mat-card>
-
 </div>
-
 
 <div class="component-logo">
     <span class="material-symbols-outlined">
