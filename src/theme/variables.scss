@@ -12,11 +12,11 @@
   --mdc-filled-text-field-container-shape: var(--radius);
 }
 
-.mdc-switch.mdc-switch--selected:enabled:focus:not(:active)
-  .mdc-switch__handle::after {
-  background: var(--mdc-switch-selected-focus-handle-color);
-}
+// .mdc-switch.mdc-switch--selected:enabled:focus:not(:active)
+//   .mdc-switch__handle::after {
+//   background: var(--mdc-switch-selected-focus-handle-color);
+// }
 
-.mdc-switch .mdc-switch__handle::before {
-  background: #ca3b3b;
-}
+// .mdc-switch .mdc-switch__handle::before {
+//   background: #ca3b3b;
+// }

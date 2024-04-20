@@ -99,4 +99,18 @@ mat-sidenav-content.mat-drawer-content {
     flex-grow: 1;
     width: 100%;
   }
+
+  .arrow {
+    top: -3.5rem;
+    position: relative;
+    font-size: 3rem;
+    background: #fff;
+    border-radius: 100%;
+    border: 0.5rem solid
+      var(--mat-stepper-header-selected-state-icon-background-color);
+    color: var(--mat-stepper-header-selected-state-icon-background-color);
+    padding: 1rem;
+    scale: 0.6;
+    font-variation-settings: "FILL" 0, "wght" 700, "GRAD" 0;
+  }
 }
