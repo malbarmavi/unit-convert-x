@@ -10,7 +10,7 @@ export class LengthService {
     return Object.keys(LengthConversionTable) as LengthKey[];
   }
 
-  calculate(baseUnit: LengthKey, toUnit: LengthKey, value: number): number {
+  calculate(baseUnit: LengthKey, toUnit: LengthKey, value: number = 0): number {
     const rate: number = LengthConversionTable[baseUnit][toUnit];
     return +(value * rate).toFixed(3);
   }

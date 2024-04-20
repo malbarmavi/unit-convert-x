@@ -2,7 +2,7 @@ import { Component, DestroyRef, OnInit, inject } from '@angular/core';
 import { FlexModule } from '@angular/flex-layout';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CurrencyCode } from '@core/types/currency-code';
-import { debounceTime, firstValueFrom, merge } from 'rxjs';
+import { debounceTime, filter, firstValueFrom, merge } from 'rxjs';
 import { MaterialModule } from '../../core/modules/material.module';
 import { CurrencyService } from './services/currency.service';
 
@@ -37,7 +37,10 @@ export class CurrencyComponent implements OnInit {
   ngOnInit(): void {
     const target$ = this.form
       .get('targetValue')!
-      .valueChanges.pipe(debounceTime(1000))
+      .valueChanges.pipe(
+        debounceTime(1000),
+        filter(() => this.form.valid)
+      )
       .subscribe(() => {
         this.convertTargetToBase();
       });
@@ -47,7 +50,10 @@ export class CurrencyComponent implements OnInit {
       this.form.get('targetCode')!.valueChanges,
       this.form.get('baseValue')!.valueChanges
     )
-      .pipe(debounceTime(1000))
+      .pipe(
+        debounceTime(1000),
+        filter(() => this.form.valid)
+      )
       .subscribe(() => {
         this.convertBaseToTarget();
       });
@@ -59,8 +65,6 @@ export class CurrencyComponent implements OnInit {
   }
 
   async convertBaseToTarget() {
-    if (this.form.invalid) return;
-
     const { baseCode, targetCode, baseValue } = this.form.getRawValue();
     try {
       const rate = await firstValueFrom(
@@ -77,8 +81,6 @@ export class CurrencyComponent implements OnInit {
 
   //only trigger as a side effect of changing the target value as the normal flow is to change base to target
   async convertTargetToBase() {
-    if (this.form.invalid) return;
-
     const { baseCode, targetCode, targetValue } = this.form.getRawValue();
     try {
       const rate = await firstValueFrom(
