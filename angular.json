@@ -84,7 +84,6 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.scss"],
             "scripts": [],
-            "progress": true,
             "browsers": "ChromeHeadless",
             "codeCoverage": true
           }
