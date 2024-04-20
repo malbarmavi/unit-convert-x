@@ -4,7 +4,7 @@ import { Component, inject } from '@angular/core';
 import { FlexModule } from '@angular/flex-layout';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { Observable, map, shareReplay } from 'rxjs';
-import { LogoComponent } from './core/logo/logo.component';
+import { LogoComponent } from './core/components/logo/logo.component';
 import { MaterialModule } from './core/modules/material.module';
 
 @Component({
