@@ -44,7 +44,7 @@
 
                     </span>
                     <span class="mat-headline-3">
-                        {{form.get('baseCode')?.value}}
+                        {{form.get('baseCode')?.value | symbol}}
 
                     </span>
                 </div>
@@ -62,7 +62,7 @@
                         {{form.get('targetValue')?.value || 0}}
                     </span>
                     <span class="mat-headline-3">
-                        {{form.get('targetCode')?.value }}
+                        {{form.get('targetCode')?.value | symbol }}
                     </span>
                 </div>
             </div>

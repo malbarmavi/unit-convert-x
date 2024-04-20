@@ -1,17 +1,18 @@
 import { Component, DestroyRef, OnInit, inject } from '@angular/core';
 import { FlexModule } from '@angular/flex-layout';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MaterialModule } from '@core/modules/material.module';
+import { SymbolPipe } from '@core/pipes/symbol.pipe';
 import { CurrencyCode } from '@core/types/currency-code';
 import { debounceTime, filter, firstValueFrom, merge } from 'rxjs';
-import { MaterialModule } from '../../core/modules/material.module';
 import { CurrencyService } from './services/currency.service';
 
 @Component({
   selector: 'uc-currency',
   standalone: true,
-  imports: [MaterialModule, ReactiveFormsModule, FlexModule],
   templateUrl: './currency.component.html',
   styleUrl: './currency.component.scss',
+  imports: [MaterialModule, ReactiveFormsModule, FlexModule, SymbolPipe],
 })
 export class CurrencyComponent implements OnInit {
   currencyService = inject(CurrencyService);

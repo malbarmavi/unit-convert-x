@@ -2,6 +2,7 @@ import { TitleCasePipe } from '@angular/common';
 import { Component, DestroyRef, OnInit, inject } from '@angular/core';
 import { FlexModule } from '@angular/flex-layout';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { SymbolPipe } from '@core/pipes/symbol.pipe';
 import { LengthKey } from '@core/types/length-key';
 import { merge } from 'rxjs';
 import { MaterialModule } from '../../core/modules/material.module';
@@ -10,7 +11,13 @@ import { LengthService } from './services/length.service';
 @Component({
   selector: 'uc-length',
   standalone: true,
-  imports: [MaterialModule, FlexModule, ReactiveFormsModule, TitleCasePipe],
+  imports: [
+    MaterialModule,
+    FlexModule,
+    ReactiveFormsModule,
+    SymbolPipe,
+    TitleCasePipe,
+  ],
   templateUrl: './length.component.html',
   styleUrl: './length.component.scss',
 })
