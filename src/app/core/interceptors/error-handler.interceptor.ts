@@ -9,6 +9,7 @@ export const errorHandlerInterceptor: HttpInterceptorFn = (req, next) => {
     catchError((err) => {
       toastr.open('⛔ Request has failed.', '✖', {
         horizontalPosition: 'left',
+        duration: 5000,
       });
       throw err;
     })
