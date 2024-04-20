@@ -19,4 +19,6 @@ app
       res.status(404).send({ message: "not founded..." });
     }
   })
-  .listen(3000);
+  .listen(3000, () => {
+    console.log("server is running .....");
+  });
