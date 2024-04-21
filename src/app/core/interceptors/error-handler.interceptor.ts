@@ -1,16 +1,13 @@
 import { HttpInterceptorFn } from '@angular/common/http';
 import { inject } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { ToastrService } from '@core/services/toastr.service';
 import { catchError } from 'rxjs';
 
 export const errorHandlerInterceptor: HttpInterceptorFn = (req, next) => {
-  const toastr = inject(MatSnackBar);
+  const toastr = inject(ToastrService);
   return next(req).pipe(
     catchError((err) => {
-      toastr.open('⛔ Request has failed.', '✖', {
-        horizontalPosition: 'left',
-        duration: 5000,
-      });
+      toastr.open('⛔ Request has failed.');
       throw err;
     })
   );
