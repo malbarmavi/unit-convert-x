@@ -45,7 +45,7 @@
 
                     </span>
                     <span class="mat-headline-3">
-                        {{form.get('baseUnit')?.value | symbol}}
+                        {{form.get('baseUnit')!.value | symbol}}
 
                     </span>
                 </div>
@@ -63,7 +63,7 @@
                         {{form.get('targetValue')?.value || 0}}
                     </span>
                     <span class="mat-headline-3">
-                        {{form.get('targetUnit')?.value | symbol}}
+                        {{form.get('targetUnit')!.value | symbol}}
                     </span>
                 </div>
             </div>

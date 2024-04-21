@@ -6,7 +6,7 @@ import { Symbol } from '@core/constant/symbol';
   standalone: true,
 })
 export class SymbolPipe implements PipeTransform {
-  transform(value: string = ''): string {
+  transform(value: string): string {
     return Symbol[value] || value;
   }
 }
