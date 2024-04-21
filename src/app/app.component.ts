@@ -1,8 +1,10 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { AsyncPipe } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FlexModule } from '@angular/flex-layout';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { SwUpdate, VersionEvent } from '@angular/service-worker';
+import { ToastrService } from '@core/services/toastr.service';
 import { Observable, map, shareReplay } from 'rxjs';
 import { LogoComponent } from './core/components/logo/logo.component';
 import { MaterialModule } from './core/modules/material.module';
@@ -22,8 +24,10 @@ import { MaterialModule } from './core/modules/material.module';
     LogoComponent,
   ],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   private breakpointObserver = inject(BreakpointObserver);
+  sw = inject(SwUpdate);
+  toastr = inject(ToastrService);
 
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
@@ -31,4 +35,28 @@ export class AppComponent {
       map((result) => result.matches),
       shareReplay()
     );
+
+  ngOnInit(): void {
+    if (this.sw.isEnabled) {
+      this.sw.versionUpdates.subscribe((e: VersionEvent) => {
+        console.log(e.type);
+        if (e.type === 'VERSION_READY') {
+          this.toastr
+            .open(
+              '🎉 New version available! Refresh to update.',
+              'Update Ready',
+              0
+            )
+            .afterDismissed()
+            .subscribe(() => {
+              this.reload();
+            });
+        }
+      });
+    }
+  }
+
+  reload() {
+    window.location.reload();
+  }
 }
