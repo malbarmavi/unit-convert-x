@@ -31,3 +31,8 @@ Run `ng lint` , `ng lint --fix`
 - (icon set) https://www.flaticon.com/packs/shipping-and-delivery-39
 - https://icon.kitchen/
 - https://maskable.app/
+
+## Fonts
+
+- https://fonts.google.com/icons
+- https://fonts.google.com/specimen/Nunito+Sans
