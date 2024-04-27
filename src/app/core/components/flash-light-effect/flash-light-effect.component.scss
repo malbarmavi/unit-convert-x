@@ -1,0 +1,16 @@
+#flashlight {
+  position: fixed;
+  box-shadow: 0 0 0 9999px #000;
+  top: var(--mouse-y);
+  left: var(--mouse-x);
+  display: none;
+  user-select: none;
+  width: 500px;
+  height: 500px;
+  pointer-events: none;
+
+  &.show {
+    z-index: 20;
+    display: block;
+  }
+}
