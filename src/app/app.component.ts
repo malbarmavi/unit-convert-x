@@ -7,6 +7,7 @@ import { SwUpdate, VersionEvent } from '@angular/service-worker';
 import { ClickEffectDirective } from '@core/directives/click-effect.directive';
 import { ToastrService } from '@core/services/toastr.service';
 import { Observable, map, shareReplay } from 'rxjs';
+import { FlashLightEffectComponent } from './core/components/flash-light-effect/flash-light-effect.component';
 import { LogoComponent } from './core/components/logo/logo.component';
 import { MaterialModule } from './core/modules/material.module';
 
@@ -24,6 +25,7 @@ import { MaterialModule } from './core/modules/material.module';
     FlexModule,
     LogoComponent,
     ClickEffectDirective,
+    FlashLightEffectComponent,
   ],
 })
 export class AppComponent implements OnInit {

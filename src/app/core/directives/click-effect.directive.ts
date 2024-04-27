@@ -11,6 +11,7 @@ export class ClickEffectDirective {
   clickAudio: HTMLAudioElement;
   constructor() {
     this.clickAudio = new Audio('/assets/sound/click.mp3');
+    this.clickAudio.volume = 0.5;
   }
 
   @HostListener('click') clickHandler() {

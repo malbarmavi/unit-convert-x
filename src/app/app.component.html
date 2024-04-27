@@ -40,6 +40,18 @@
             }
             <div class="w-100" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="0.5rem">
                 <!-- <mat-slide-toggle class="mode-control" color="primary"></mat-slide-toggle> -->
+                <button mat-button (click)="fl.switch()">
+                    @if (fl.mode === 'light') {
+                    <span class="material-symbols-outlined flex">
+                        light_mode
+                    </span>
+                    } @else {
+                    <span class="material-symbols-outlined flex">
+                        dark_mode
+                    </span>
+                    }
+
+                </button>
                 <a href="https://github.com/malbarmavi/unit-convert-x" target="_blank" mat-button>
                     <div class="github-icon o-6">
 
@@ -58,9 +70,11 @@
         </mat-toolbar>
 
         <div class="my-1 mx-2 container" fxLayout="column">
+
             <router-outlet>
             </router-outlet>
             <!-- <img src="/assets/flashlight.webp" alt=""> -->
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
+<uc-flash-light-effect #fl></uc-flash-light-effect>
