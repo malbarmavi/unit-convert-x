@@ -4,6 +4,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { FlexModule } from '@angular/flex-layout';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { SwUpdate, VersionEvent } from '@angular/service-worker';
+import { ClickEffectDirective } from '@core/directives/click-effect.directive';
 import { ToastrService } from '@core/services/toastr.service';
 import { Observable, map, shareReplay } from 'rxjs';
 import { LogoComponent } from './core/components/logo/logo.component';
@@ -22,6 +23,7 @@ import { MaterialModule } from './core/modules/material.module';
     AsyncPipe,
     FlexModule,
     LogoComponent,
+    ClickEffectDirective,
   ],
 })
 export class AppComponent implements OnInit {
