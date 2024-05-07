@@ -1,5 +1,9 @@
 # Unit Convert X
 
+#### 🌟 👷‍♂️ this is just a UI experiment to explore PWA and Angular Material 🌟
+
+##
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.1.
 
 ## Development server 🚧
@@ -8,7 +12,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Currency API server 🏧
 
-Run `npm run server` for currency api server base of `abstractapi.com` as we only have a limit for 500 request per month.
+Run `npm run server` for currency API server base of `abstractapi.com` as we only have a limit for 500 requests per month.
 
 ## Code scaffolding 👷‍♂️
 
