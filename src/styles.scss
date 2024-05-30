@@ -1,6 +1,7 @@
 @import "./theme/material.scss";
 @import "./theme/variables.scss";
 @import "./theme/util.scss";
+@import "./theme/animations.scss";
 
 html,
 body {
@@ -113,4 +114,8 @@ mat-sidenav-content.mat-drawer-content {
     scale: 0.6;
     font-variation-settings: "FILL" 0, "wght" 700, "GRAD" 0;
   }
+}
+
+router-outlet.main-router + * {
+  @extend .enter;
 }

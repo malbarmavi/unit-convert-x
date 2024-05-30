@@ -1,0 +1,14 @@
+.enter {
+  opacity: 0;
+  scale: 0.9;
+  transform: translateY(-15%);
+  animation: component-enter 0.5s ease-in-out forwards;
+}
+
+@keyframes component-enter {
+  to {
+    opacity: 1;
+    scale: 1;
+    transform: translateY(0);
+  }
+}
