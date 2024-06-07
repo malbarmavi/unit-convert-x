@@ -1,18 +1,15 @@
 /* eslint-disable @angular-eslint/directive-selector */
-import { Directive, HostListener } from '@angular/core';
+import { Directive, HostListener, inject } from '@angular/core';
+import { ClickAudioToken } from '@core/tokens/ckick-audio';
 /**
- * Just for fun play click sound on click on some items 🔊
+ * Just for fun play click sound on click 🔊
  */
 @Directive({
   selector: '[mat-list-item],[mat-button]',
   standalone: true,
 })
 export class ClickEffectDirective {
-  clickAudio: HTMLAudioElement;
-  constructor() {
-    this.clickAudio = new Audio('/assets/sound/click.mp3');
-    this.clickAudio.volume = 0.5;
-  }
+  clickAudio: HTMLAudioElement = inject(ClickAudioToken);
 
   @HostListener('click') clickHandler() {
     this.clickAudio.currentTime = 0;
