@@ -1,4 +1,4 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 
 import { CurrencyCode } from '@core/types/currency-code';
@@ -6,6 +6,7 @@ import { CurrencyRate } from '@core/types/currency-rate';
 import { Test } from '@core/util/test';
 import { firstValueFrom, of } from 'rxjs';
 import { CurrencyService } from './currency.service';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 export const USD_Rate: CurrencyRate = {
   base: 'USD',
@@ -23,8 +24,9 @@ describe('CurrencyService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-    });
+    imports: [],
+    providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+});
     service = TestBed.inject(CurrencyService);
   });
 

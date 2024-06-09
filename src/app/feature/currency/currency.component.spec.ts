@@ -6,12 +6,13 @@ import {
   tick,
 } from '@angular/core/testing';
 
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { Test } from '@core/util/test';
 import { of } from 'rxjs';
 import { CurrencyComponent } from './currency.component';
 import { USD_Rate } from './services/currency.service.spec';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 describe('CurrencyComponent', () => {
   let component: CurrencyComponent;
@@ -19,9 +20,9 @@ describe('CurrencyComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CurrencyComponent, HttpClientTestingModule],
-      providers: [provideAnimationsAsync()],
-    }).compileComponents();
+    imports: [CurrencyComponent],
+    providers: [provideAnimationsAsync(), provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+}).compileComponents();
 
     fixture = TestBed.createComponent(CurrencyComponent);
     component = fixture.componentInstance;
